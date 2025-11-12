@@ -1,0 +1,321 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    padding: 20px;
+    background: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #000;
+    padding-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.header h2 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.header p {
+    font-size: 12px;
+    margin: 3px 0;
+}
+
+.motto {
+    font-style: italic;
+    font-size: 11px;
+    margin-top: 10px;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.location-map {
+    border: 2px solid #000;
+    padding: 20px;
+    position: relative;
+    min-height: 400px;
+}
+
+.location-map h3 {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.map-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2px;
+    margin-top: 20px;
+}
+
+.map-cell {
+    border: 1px solid #333;
+    padding: 8px 5px;
+    text-align: center;
+    font-size: 11px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-cell.highlighted {
+    background: #333;
+    color: white;
+    font-weight: bold;
+}
+
+.detail-plan {
+    border: 2px solid #000;
+    padding: 20px;
+}
+
+.info-box {
+    background: #f9f9f9;
+    border: 1px solid #000;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.info-box h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    font-size: 12px;
+}
+
+.info-label {
+    font-weight: bold;
+}
+
+.coordinate-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 11px;
+}
+
+.coordinate-table th,
+.coordinate-table td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+}
+
+.coordinate-table th {
+    background: #f0f0f0;
+    font-weight: bold;
+}
+
+.plan-diagram {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border: 1px solid #000;
+    margin: 20px 0;
+    background: white;
+}
+
+.parcel {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 122px;
+    border: 3px solid #000;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 5px,
+        #000 5px,
+        #000 6px
+    );
+}
+
+.corner {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #000;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.corner.b1 {
+    top: -5px;
+    left: -5px;
+}
+
+.corner.b2 {
+    top: -5px;
+    right: -5px;
+}
+
+.corner.b3 {
+    bottom: -5px;
+    right: -5px;
+}
+
+.corner.b4 {
+    bottom: -5px;
+    left: -5px;
+}
+
+.dimension {
+    position: absolute;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.dimension.top {
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dimension.right {
+    right: -45px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dimension.bottom {
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dimension.left {
+    left: -45px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.label {
+    position: absolute;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.adjacent-parcel {
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    color: #666;
+}
+
+.compass {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: center;
+}
+
+.compass-circle {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.compass-n {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+}
+
+.compass-star {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+
+.compass-directions {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.signatures {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid #000;
+}
+
+.signature-block {
+    text-align: center;
+    font-size: 11px;
+}
+
+.signature-block h4 {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.signature-block p {
+    margin: 3px 0;
+}
+
+.scale {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.tf-number {
+    text-align: right;
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+.certification {
+    margin-top: 20px;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.full-width-section {
+    grid-column: 1 / -1;
+    margin-top: 40px;
+    page-break-before: always;
+}
